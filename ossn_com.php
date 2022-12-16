@@ -77,9 +77,9 @@ function whoisonline_gadget(array $params = array()): int | array | bool {
 /**
  * Make user Gadgets component not get disabled
  *
- * @return int | array | bool
+ * @return array
  */
-function dashboard_gadgets_asure_requirements($hook, $type, $return, $params): void {
+function dashboard_gadgets_asure_requirements($hook, $type, $return, $params): array {
 		$return[] = 'Gadgets';
 		return $return;
 }
