@@ -47,7 +47,6 @@ ossn_register_callback('ossn', 'init', function () {
 						ossn_register_gadget('site/files', 'gadgets/site/files');
 				}
 				ossn_register_action('gadget/user/save', __Gadget__ . 'actions/user/save.php');
-				ossn_add_hook('required', 'components', 'dashboard_gadgets_asure_requirements');
 		}
 });
 /**
@@ -73,15 +72,6 @@ function whoisonline_gadget(array $params = array()): int | array | bool {
 		);
 		$args = array_merge($default, $params);
 		return $users->searchUsers($args);
-}
-/**
- * Make user Gadgets component not get disabled
- *
- * @return array
- */
-function dashboard_gadgets_asure_requirements($hook, $type, $return, $params): array {
-		$return[] = 'Gadgets';
-		return $return;
 }
 /**
  * Gadget types allowed
