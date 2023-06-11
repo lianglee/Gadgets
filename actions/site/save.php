@@ -16,18 +16,16 @@ if($layout) {
 				}
 		}
 }
-$type    = explode('/', $name);
-if($type[0] != 'user'){
-		echo 0;
-		exit;
-}
+//admin doesn't need a checks
 if(!in_array($name, $allowed)){
+		echo $type;
 		echo 0;
 		exit;
 }
 $Gadgets = new Gadgets();
 $Gadgets->layout_page = $name;
-$Gadgets->owner_guid = ossn_loggedin_user()->guid;
+$Gadgets->type		  = 'site';
+$Gadgets->owner_guid  = 1;
 if($Gadgets->saveLayout($escaped)){
 		echo 1;	
 }

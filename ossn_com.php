@@ -48,6 +48,9 @@ ossn_register_callback('ossn', 'init', function () {
 				}
 				ossn_register_action('gadget/user/save', __Gadget__ . 'actions/user/save.php');
 		}
+		if(ossn_isAdminLoggedin()){
+				ossn_register_action('gadget/site/save', __Gadget__ . 'actions/site/save.php');
+		}
 });
 /**
  * Gadget whois online

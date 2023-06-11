@@ -75,9 +75,16 @@ function ossn_gadgets_init() {
 			var name = options['name'];
 			delete options['name'];
 
+			var save_url = Ossn.site_url + 'action/gadget/user/save?name=' + name;
+			var gadget_data_type = $('#gadget-save-layout').attr('data-type');
+			
+			if(gadget_data_type && gadget_data_type == 'site'){
+				save_url = Ossn.site_url + 'action/gadget/site/save?name=' + name;
+			}
+			
 			Ossn.PostRequest({
 				params: '&layout=' + btoa(JSON.stringify(options['layout'])),
-				url: Ossn.site_url + 'action/gadget/user/save?name=' + name,
+				url: save_url,
 				beforeSend: function(request) {
 					$('.gadget-save').prepend('<div class="ossn-loading"></div>');
 					$('.gadget-save a').hide();
