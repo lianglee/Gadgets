@@ -37,7 +37,7 @@ ossn_register_callback('ossn', 'init', function () {
 				if(com_is_active('Events')) {
 						ossn_register_gadget('site/events', 'gadgets/site/events');
 				}
-				if(com_is_active('Marketplace')) {
+				if(com_is_active('MarketPlace')) {
 						ossn_register_gadget('site/marketplace', 'gadgets/site/marketplace');
 				}
 				if(com_is_active('MP3')) {
